@@ -1,38 +1,93 @@
-# DIO - Trilha .NET - Fundamentos
-www.dio.me
+# 🚗 Sistema de Estacionamento - DIO .NET Fundamentos
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+Projeto desenvolvido como desafio do módulo de Fundamentos da trilha .NET da [DIO](https://www.dio.me/).
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
+## 📋 Descrição
 
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
+Este sistema simula a gestão de um estacionamento, permitindo cadastrar, remover e listar veículos, além de calcular o valor cobrado pelo tempo de permanência.
+
+## 🛠️ Funcionalidades
+
+- **Cadastrar veículo:** Adiciona a placa de um veículo ao estacionamento.
+- **Remover veículo:** Remove um veículo, solicita o tempo de permanência e calcula o valor a ser pago.
+- **Listar veículos:** Exibe todos os veículos atualmente estacionados.
+- **Menu interativo:** Interface simples via console para navegação entre as opções.
+
+## 🏗️ Estrutura da Classe
+
+A classe principal é `Estacionamento`, conforme o diagrama abaixo:
+
 ![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
 
-A classe contém três variáveis, sendo:
+### Propriedades
 
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
+- `precoInicial` (`decimal`): Preço fixo cobrado ao estacionar.
+- `precoPorHora` (`decimal`): Preço cobrado por hora adicional.
+- `veiculos` (`List<string>`): Lista de placas dos veículos estacionados.
 
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
+### Métodos
 
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
+- `AdicionarVeiculo()`: Adiciona uma placa à lista de veículos.
+- `RemoverVeiculo()`: Remove uma placa, solicita as horas e calcula o valor.
+- `ListarVeiculos()`: Lista todas as placas estacionadas.
 
-A classe contém três métodos, sendo:
+## 💻 Como Executar
 
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
+1. **Pré-requisitos:**  
+   - [.NET 6.0 SDK ou superior](https://dotnet.microsoft.com/download)
 
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
+2. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd trilha-net-fundamentos-desafio
+   ```
 
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
+3. **Rode o projeto:**
+   ```bash
+   dotnet run
+   ```
 
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
+4. **Siga o menu interativo no console.**
 
+## 📝 Exemplo de Uso
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+```
+1 - Cadastrar veículo
+2 - Remover veículo
+3 - Listar veículos
+4 - Encerrar
+
+Opção: 1
+Digite a placa do veículo para estacionar:
+> ABC-1234
+Veículo cadastrado com sucesso!
+
+Opção: 3
+Veículos estacionados:
+ABC-1234
+
+Opção: 2
+Digite a placa do veículo para remover:
+> ABC-1234
+Digite a quantidade de horas que o veículo permaneceu estacionado:
+> 2
+O valor total a ser pago é: R$ 12,00
+Veículo removido com sucesso!
+```
+
+## ❗ Observações
+
+- Caso não haja veículos estacionados, será exibida a mensagem:  
+  `Não há veículos estacionados.`
+- O sistema não valida o formato da placa.
+
+## 📚 Aprendizados
+
+- Manipulação de listas e strings em C#
+- Estruturas de decisão e repetição
+- Interação com o usuário via console
+- Encapsulamento e organização de código orientado a objetos
+
+---
+
+Desafio prático do curso [DIO .NET Fundamentos](https://www.dio.me/).
